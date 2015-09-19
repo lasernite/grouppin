@@ -11,9 +11,9 @@
 
 	<div class="new_grouppin">
 		<i class="fa fa-plus fa-3x"></i>
-		<div class="post_text">Post</div>
-	</div>
+		<div class="post_text"> Post </div>
 
+	</div>
 
 </div>
 
@@ -26,4 +26,8 @@
 
 		<div class="log_in"><%= render 'users/sessions/new' %></div>
 	<% end %>
+
+    <% for @item in @posters %>
+        <img src = <%= @item %> />
+    <% end %>
 </div>
