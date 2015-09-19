@@ -31,6 +31,14 @@ gem 'spring',        group: :development
 # Geolocation for local connectivity
 gem 'geocoder'
 
+# parse db
+gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
+
+# user authentication
+gem 'devise'
+# facebook integration with users
+gem 'omniauth-facebook', '1.4.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -48,10 +56,3 @@ gem "font-awesome-rails"
 
 # heroku postgres request, static assets
 gem 'rails_12factor', group: :production
-
-gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
-
-gem 'devise'
-
-gem 'omniauth-facebook', '1.4.0'
-
