@@ -2,6 +2,8 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'tesseract'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -20,23 +22,16 @@ module Grouppin
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :default
     
+    ENGINE = Tesseract::Engine.new {|e|
+      e.language  = :eng
+      e.blacklist = '|'
+    }
 
     ### <Amin>
-    ### Initialize Parse:
-    client = Parse.create :application_id => "cKZVxP7EUoAEeGHoDUrHrLQNQcvbk40QzJ0ofZtr",
+    # Initialize Parse:
+    PARSE_CLIENT = Parse.create :application_id => "cKZVxP7EUoAEeGHoDUrHrLQNQcvbk40QzJ0ofZtr",
                           :api_key => "MgIne9yvfOcnVbN90C6L4kpGCzm6Y1ReELsBYQdS"
-    # Upload dummy image.
-    photo = client.file({
-        :body => IO.read("app/assets/images/logo.gif"),
-        :local_filename => "logo.gif",
-        :content_type => "image/gif"
-    })
-    photo.save
-    poster = client.object("Poster").tap do |p|
-        p["foo"] = "Penguin"
-        p["image"] = photo
-    end.save
-    ### </Amin>
+    
 
   end
 end
