@@ -22,21 +22,10 @@ module Grouppin
     
 
     ### <Amin>
-    ### Initialize Parse:
-    client = Parse.create :application_id => "cKZVxP7EUoAEeGHoDUrHrLQNQcvbk40QzJ0ofZtr",
+    # Initialize Parse:
+    PARSE_CLIENT = Parse.create :application_id => "cKZVxP7EUoAEeGHoDUrHrLQNQcvbk40QzJ0ofZtr",
                           :api_key => "MgIne9yvfOcnVbN90C6L4kpGCzm6Y1ReELsBYQdS"
-    # Upload dummy image.
-    photo = client.file({
-        :body => IO.read("app/assets/images/logo.gif"),
-        :local_filename => "logo.gif",
-        :content_type => "image/gif"
-    })
-    photo.save
-    poster = client.object("Poster").tap do |p|
-        p["foo"] = "Penguin"
-        p["image"] = photo
-    end.save
-    ### </Amin>
+    
 
   end
 end
