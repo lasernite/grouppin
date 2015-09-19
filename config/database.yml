@@ -28,7 +28,7 @@
 development:
   adapter: postgresql
   database: grouppin_development
-  username: amin
+  username: lasernite
   password:
   pool: 5
   timeout: 5000
