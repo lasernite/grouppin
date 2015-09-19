@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/adelevie/parse-ruby-client.git
+  revision: 45d99ff6713633104a7ec12af37a8dd9a4cefb71
+  specs:
+    parse-ruby-client (1.0.0)
+      faraday (= 0.9.1)
+      faraday_middleware (~> 0.10.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,6 +46,10 @@ GEM
     coffee-script-source (1.9.1.1)
     erubis (2.7.0)
     execjs (2.5.2)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     geocoder (1.2.8)
@@ -55,6 +67,7 @@ GEM
     mime-types (2.6.1)
     minitest (5.7.0)
     multi_json (1.11.2)
+    multipart-post (2.0.0)
     pg (0.18.2)
     rack (1.5.5)
     rack-test (0.6.3)
@@ -121,6 +134,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
+  parse-ruby-client!
   pg
   rails (= 4.1.7)
   rails_12factor

@@ -48,3 +48,5 @@ gem "font-awesome-rails"
 
 # heroku postgres request, static assets
 gem 'rails_12factor', group: :production
+
+gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
