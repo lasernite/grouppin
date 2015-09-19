@@ -18,6 +18,25 @@ module Grouppin
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    # config.i18n.default_locale = :default
+    
+
+    ### <Amin>
+    ### Initialize Parse:
+    client = Parse.create :application_id => "cKZVxP7EUoAEeGHoDUrHrLQNQcvbk40QzJ0ofZtr",
+                          :api_key => "MgIne9yvfOcnVbN90C6L4kpGCzm6Y1ReELsBYQdS"
+    # Upload dummy image.
+    photo = client.file({
+        :body => IO.read("app/assets/images/logo.gif"),
+        :local_filename => "logo.gif",
+        :content_type => "image/gif"
+    })
+    photo.save
+    poster = client.object("Poster").tap do |p|
+        p["foo"] = "Penguin"
+        p["image"] = photo
+    end.save
+    ### </Amin>
+
   end
 end
