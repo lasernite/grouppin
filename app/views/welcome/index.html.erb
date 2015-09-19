@@ -4,13 +4,17 @@
 	</div>
 
 	<% if user_signed_in? %>
-	  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+		<div class="signin_logout_div">
+	  		<%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "signin_logout") %>  
+	  	</div>      
 	<% else %>
-	  <%= link_to('Login', new_user_session_path)  %>  
+		<div class="signin_logout_div">
+	  		<%= link_to('Login', new_user_session_path, :class => "signin_logout")  %>
+	  	</div>  
 	<% end %>
 
 	<div class="new_grouppin">
-		<i class="fa fa-plus fa-3x"></i>
+		<i class="fa fa-plus fa-3x post_plus"></i>
 		<div class="post_text">Post</div>
 	</div>
 
