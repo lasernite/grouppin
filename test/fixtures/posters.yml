@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image_url,: MyString
+  love,: MyString
+  comments,: MyString
+  tesseract_text,: MyString
+  parsed_minute,: MyString
+  parsed_hour,: MyString
+  parsed_day_of_week,: MyString
+  parsed_day_of_month,: MyString
+  parsed_month: MyString
+
+two:
+  image_url,: MyString
+  love,: MyString
+  comments,: MyString
+  tesseract_text,: MyString
+  parsed_minute,: MyString
+  parsed_hour,: MyString
+  parsed_day_of_week,: MyString
+  parsed_day_of_month,: MyString
+  parsed_month: MyString

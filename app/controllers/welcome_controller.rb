@@ -9,5 +9,8 @@ class WelcomeController < ApplicationController
 
 		# Devise current user from session
 		@user = current_user
+
+        # allow poster form
+        @new_poster = Poster.new
 	end
 end

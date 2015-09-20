@@ -46,7 +46,7 @@ gem 'omniauth-facebook', '1.4.0'
 
 # paperclip image upload w/ amazon
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 # imagemagick
 gem 'rmagick'

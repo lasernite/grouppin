@@ -5,9 +5,9 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['grouppin'],
-      :access_key_id => ENV['AKIAJFLQSYABX3AUXACQ'],
-      :secret_access_key => ENV['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']
+      :bucket => 'grouppin',
+      :access_key_id => 'AKIAJFLQSYABX3AUXACQ',
+      :secret_access_key => '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'
     }
   }
 
