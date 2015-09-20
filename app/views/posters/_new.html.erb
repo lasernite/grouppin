@@ -1,5 +1,4 @@
 <%= form_for(@new_poster, multipart: true) do |f| %>
-	
 	<i class="fa fa-plus fa-3x"></i>
 	<div class="post_text"> Pin </div>
 
@@ -10,5 +9,18 @@
 	<div class="actions">
 		<%= f.submit 'Pin it' %>
 	</div>
+
+	<h2>Comments</h2>
+	<% @new_poster.comments.each do |comment| %>
+	  <p>
+	    <b>Commenter:</b>
+	    <%= comment.commenter %>
+	  </p>
+	 
+	  <p>
+	    <b>Comment:</b>
+	    <%= comment.body %>
+	  </p>
+	<% end %>
 
 <% end %>
