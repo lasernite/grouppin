@@ -70,3 +70,5 @@ gem "font-awesome-rails"
 
 # heroku postgres request, static assets
 gem 'rails_12factor', group: :production
+
+gem 'pry-rails'

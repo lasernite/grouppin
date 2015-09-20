@@ -16,7 +16,8 @@ class TesseractInformationController < ApplicationController
 	    if Chronic.parse(text, :now=>Time.now, :guess=>true) != nil
 	        return Chronic.parse(text, :now=>Time.now, :guess=>true)
 	    else
-	        arr = text.split(" ")
+	    	arr = text.gsub(/\s+/m, ' ').strip.split(" ")
+	        # arr = text.split(" ")
 	        scores = Hash.new
 	        matches = 0
 	        for i in 2..[arr.length-1, 4].min
