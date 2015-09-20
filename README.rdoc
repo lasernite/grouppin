@@ -1,28 +1,57 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Posters is an OCR and NLP powered web app that lets you walk through the infinite and snap photos of the posters on the walls to create a time-sorted event catalog. Publish your own events to Posters to save paper and time. The simplicity of event creation will make Posters the most beautiful, accessible, and complete listing of events at MIT - we bring the Infinite to you everywhere.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== Table of Contents
+
+1. On OCR : Tesseract
+
+2. On NLP : Stanford Core NLP & Chronic
+
+3. Getting the project up and running on OS X 
+
+
+=== 1. On OCR
+
+We use the Google's Tesseract api (through the tesseract-ocr) gem for Rails to perform optical character recognition on images of posters (user content). This utilizes the Tesseract engine's <tt>text_for(IMAGE_URL)</tt> function, outputting text.
+
+The Tesseract engine itself is initialized and customized in <tt>config/application.rb</tt>, where we set English as the target language, and blacklist characters to improve OCR performance.
+
+
+=== 2. On NLP
+
+We use Stanford Core NLP on the text outputted from Tesseract. It analyzes its content, tagging sections of it with content labels. This allows us to identify the blocks of text that contain Date/Time information.
+
+We pass these to Chronic, an API for converting natural language representations of Date/Time into actual Time objects. Unfortunately, Chronic performed poorly on all but the simplest inputs. For example, it could parse "4:00 pm Saturday" or "4:00 pm Sep 26" but not "4:00 pm Saturday Sep 26" (for which it returns nil). We decided that it was powerful enough to be useful, with modification.
+
+Our algorithm makes the following key observations
+
+1. A date-time value can usually be completely expressed in 4 words.
+2. Although these 4 words may not be completely sequential, they tend to be close to each other (only one or two irrelevent interjecting words).
+3. A date-time found on a poster is most likely to be in the near future or recent past, and very unlikely to be in the distant future/past. This is reflected in our prior belief.
+4. The worst error is a misclassification of a date-time in the near future.
+5. Numbers are more likely relevent to date-time than words.
+
+
+=== 3. Getting the project up and running on OS X 
+
+* Ruby version : 2.1.4
+
+* Dependencies : tesseract-ocr, chronic, stanford-core-nlp, paperclip
+
+* Database creation : <tt>rake db:create db:migrate</tt>
+
+* Database initialization : <tt>postgres -D /usr/local/var/postgres/</tt>
+
+* Deployment instructions : Wait until heroku isn't down any more.
+
+
+
+=== Made with love by:
+
+Amin Manna (amin10),
+Laser Nite (lasernite),
+Mayuri Sridhar (mayuri95),
+Noor Eddin Amer (nooralasa)

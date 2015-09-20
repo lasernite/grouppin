@@ -14,5 +14,7 @@ class WelcomeController < ApplicationController
         @new_poster = Poster.new
 
         @posters = Poster.all
+
+		@sorted = @posters.sort_by {|p| p.parsed_datetime}
 	end
 end
