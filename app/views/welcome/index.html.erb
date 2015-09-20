@@ -9,9 +9,7 @@
 	  	</div>
 
 	  	<div class="new_grouppin">
-			<i class="fa fa-plus fa-3x"></i>
-			<div class="post_text"> Post </div>
-
+	  		<%= render 'posters/new' %>
 		</div>      
 	<% else %>
 		<div class="signin_logout_div">
@@ -23,15 +21,20 @@
 
 <div class="main">
 
-	<%= render 'posters/new' %>
-
 	<%# Only display Log In and Sign Up if user is logged out, otherwise show relevant grouppins %>
 	<% if user_signed_in? %>
-		Horraayy you're signed in! You can post!
 	<% else %>
 		<div class="sign_up"><%= render 'users/registrations/new' %></div>
 
 		<div class="log_in"><%= render 'users/sessions/new' %></div>
 	<% end %>
+
+	<div class="grid">
+		<% @posters.reverse.each do |poster| %>
+			<div class="grid-item">
+				<%= image_tag poster.image_paperclip.url(:normal) %>
+			</div>
+		<% end %>
+	</div>
 
 </div>
