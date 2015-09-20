@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920054836) do
+ActiveRecord::Schema.define(version: 20150920095820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150920054836) do
     t.string   "image_paperclip_content_type"
     t.integer  "image_paperclip_file_size"
     t.datetime "image_paperclip_updated_at"
+    t.time     "parsed_date_time"
   end
 
   create_table "users", force: true do |t|
