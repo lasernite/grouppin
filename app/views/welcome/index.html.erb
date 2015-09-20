@@ -50,7 +50,15 @@
 		    		<%= f.submit 'Comment', :class => 'comment_button' %>
 
 		    		<% Comment.where(poster_id: poster.id).each do |comment| %>
-		    			<%= comment.body %>
+		    			<div class="comment_tablet" >
+		    				<div class="user_name_comment">
+		    					<%= User.find(comment.user_id).name %>
+		    				</div>
+			    			<div class="comment" >
+			    				<%= comment.body %>
+			    			</div>
+			    		</div>
+
 		    		<% end %>
 
 		   		<% end %>
