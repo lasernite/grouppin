@@ -2,6 +2,7 @@ class PostersController < ApplicationController
 	def create
 		@poster = Poster.new(poster_params)
 		@poster.save
+		redirect_to '/'
 	end
 
 
