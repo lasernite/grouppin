@@ -1,6 +1,16 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # config/environments/production.rb
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['grouppin'],
+      :access_key_id => ENV['AKIAJFLQSYABX3AUXACQ'],
+      :secret_access_key => ENV['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']
+    }
+  }
+
   # devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
