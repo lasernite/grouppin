@@ -7,8 +7,9 @@
 	  		url = @poster.image_paperclip.url()
 			@poster.update_attribute(:image_url, url)
 	  		time, text = index(params['poster']['image_paperclip'])
+	  		datetime = DateTime.new(year = time.year, month = time.month, day = time.day, hour = time.hour, minute = time.min)
 			@poster.update_attribute(:tesseract_text, text)
-			@poster.update_attribute(:parsed_date_time, time)
+			@poster.update_attribute(:parsed_datetime, datetime)
 			redirect_to '/'
 		end
 
@@ -114,6 +115,6 @@
 
 		private
 		    def poster_params
-		  	  params.require(:poster).permit(:image_url, :image_paperclip, :love, :comments, :tesseract_text, :parsed_minute, :parsed_hour, :parsed_day_of_week, :parsed_day_of_month, :parsed_month, :parsed_date_time)
+		  	  params.require(:poster).permit(:image_url, :image_paperclip, :love, :comments, :tesseract_text, :parsed_minute, :parsed_hour, :parsed_day_of_week, :parsed_day_of_month, :parsed_month, :parsed_datetime)
 		    end
 	end
