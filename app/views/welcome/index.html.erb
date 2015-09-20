@@ -3,11 +3,20 @@
 		<%= @city %>
 	</div>
 
+	<% if user_signed_in? %>
+		<div class="signin_logout_div">
+	  		<%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "signin_logout") %>  
+	  	</div>      
+	<% else %>
+		<div class="signin_logout_div">
+	  		<%= link_to('Login', new_user_session_path, :class => "signin_logout")  %>
+	  	</div>  
+	<% end %>
+
 	<div class="new_grouppin">
 		<i class="fa fa-plus fa-3x"></i>
-		<div class="post_text">Post</div>
+		<div class="post_text"> Post </div>
 	</div>
-
 
 </div>
 
@@ -20,4 +29,8 @@
 
 		<div class="log_in"><%= render 'users/sessions/new' %></div>
 	<% end %>
+
+    <% for @item in @posters %>
+        <img src = <%= @item %> />
+    <% end %>
 </div>

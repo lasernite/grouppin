@@ -34,6 +34,8 @@ gem 'geocoder'
 # parse db
 gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
 
+gem 'tesseract-ocr', git:'https://github.com/meh/ruby-tesseract-ocr'
+
 # user authentication
 gem 'devise'
 # facebook integration with users
