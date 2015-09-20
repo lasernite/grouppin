@@ -45,13 +45,13 @@ Our algorithm makes the following key observations
 
 * Database initialization : <tt>postgres -D /usr/local/var/postgres/</tt>
 
-* Deployment instructions :
+* Deployment instructions : Wait until heroku isn't down any more.
 
 
 
 === Made with love by:
 
-Amin Manna (amin10)
-Laser Nite (lasernite)
-Mayuri Sridhar (mayuri95)
+Amin Manna (amin10),
+Laser Nite (lasernite),
+Mayuri Sridhar (mayuri95),
 Noor Eddin Amer (nooralasa)
