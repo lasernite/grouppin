@@ -12,5 +12,7 @@ class WelcomeController < ApplicationController
 
         # allow poster form
         @new_poster = Poster.new
+
+        @posters = Poster.all
 	end
 end
