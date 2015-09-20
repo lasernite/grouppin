@@ -37,9 +37,26 @@
 
 	<div class="grid">
 		<% @posters.reverse.each do |poster| %>
+
 			<div class="grid-item">
 				<%= image_tag poster.image_paperclip.url(:normal) %>
+
+				<%= form_for :comment, url: poster_comments_path(poster_id: poster.id) do |f| %>
+
+					<div class="comment_box_outer">
+				   		<%= f.text_area :body, :class => "comment_box", :placeholder => "Type a comment..." %>
+					</div>
+		 
+		    		<%= f.submit 'Comment', :class => 'comment_button' %>
+
+		    		<% Comment.where(poster_id: poster.id).each do |comment| %>
+		    			<%= comment.body %>
+		    		<% end %>
+
+		   		<% end %>
+
 			</div>
+
 		<% end %>
 	</div>
 

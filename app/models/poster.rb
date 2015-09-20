@@ -10,4 +10,5 @@ class Poster < ActiveRecord::Base
   validates_attachment_content_type :image_paperclip, :content_type => /\Aimage\/.*\Z/
 
   has_many :comments
+  belongs_to :user
 end

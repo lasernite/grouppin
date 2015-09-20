@@ -12,4 +12,7 @@ class User < ActiveRecord::Base
 	    user.name = auth.info.name  
 	  end
 	end
+
+	has_many :comments
+	has_many :posters
 end
