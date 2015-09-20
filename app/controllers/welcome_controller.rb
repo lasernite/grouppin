@@ -10,27 +10,7 @@ class WelcomeController < ApplicationController
 		# Devise current user from session
 		@user = current_user
 
-        # Amin's adding parse here, merged successfully 
-        client = Grouppin::Application::PARSE_CLIENT
-        # Upload dummy image.
-        photo = client.file({
-            :body => IO.read("app/assets/images/logo.gif"),
-            :local_filename => "logo.gif",
-            :content_type => "image/gif"
-        })
-        photo.save
-
-        poster = client.object("Poster").tap do |p|
-            p["image"] = photo
-        end.save
-
-        #Get all photos and store their urls in @posters
-        query = client.query("Poster")
-
-        results = query.get
-        urls = []
-        results.each { |x| urls.push(x["image"].url) }
-        
-        @posters = urls
+        # allow poster form
+        @new_poster = Poster.new
 	end
 end

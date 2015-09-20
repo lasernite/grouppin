@@ -32,9 +32,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'geocoder'
 
 # parse db
-gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
+# gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
 
 gem 'tesseract-ocr', git:'https://github.com/meh/ruby-tesseract-ocr'
+gem 'stanford-core-nlp'
 
 # user authentication
 gem 'devise'
@@ -44,6 +45,12 @@ gem 'omniauth-facebook', '1.4.0'
 # ENV['CFLAGS'] = '-I/usr/local/Cellar/tesseract/3.02.02_3/include -I/usr/local/Cellar/leptonica/1.72/include' 
 # ENV['LDFLAGS'] = '-L/usr/local/Cellar/tesseract/3.02.02_3/lib -L/usr/local/Cellar/leptonica/1.72/lib'
 
+# paperclip image upload w/ amazon
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
+
+# imagemagick
+gem 'rmagick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

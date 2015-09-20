@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150919210744) do
+ActiveRecord::Schema.define(version: 20150920023736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "posters", force: true do |t|
+    t.text     "image_url"
+    t.integer  "love"
+    t.text     "comments"
+    t.text     "tesseract_text"
+    t.integer  "parsed_minute"
+    t.integer  "parsed_hour"
+    t.string   "parsed_day_of_week"
+    t.integer  "parsed_day_of_month"
+    t.integer  "parsed_month"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_paperclip_file_name"
+    t.string   "image_paperclip_content_type"
+    t.integer  "image_paperclip_file_size"
+    t.datetime "image_paperclip_updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

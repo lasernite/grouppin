@@ -1,0 +1,10 @@
+<%= form_for(@new_poster, multipart: true) do |f| %>
+	  <div class="field">
+	    <%= f.label :image_paperclip %>
+	    <%= f.file_field :image_paperclip %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit 'Make a friend' %>
+	    <%= link_to 'Nevermind', posters_path, class: 'button' %>
+	  </div>
+<% end %>
