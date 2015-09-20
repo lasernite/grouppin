@@ -28,7 +28,6 @@
 development:
   adapter: postgresql
   database: grouppin_development
-<<<<<<< HEAD
   username: lasernite
   password:
   pool: 5

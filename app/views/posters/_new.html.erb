@@ -1,15 +1,18 @@
+
+
 <%= form_for(@new_poster, multipart: true) do |f| %>
-	<i class="fa fa-plus fa-3x"></i>
-	<div class="post_text"> Pin </div>
 
 	<div class="field">
-		<%= f.file_field :image_paperclip, :id => "image_field" %>
+		<%= f.file_field :image_paperclip, :class => "file" %>
 	</div>
 
 	<div class="actions">
-		<%= f.submit 'Pin it' %>
+		<%= f.submit 'Pin it', :class => "submit_file" %>
 	</div>
+<% end %>
 
+
+<!--
 	<h2>Comments</h2>
 	<% @new_poster.comments.each do |comment| %>
 	  <p>
@@ -21,6 +24,6 @@
 	    <b>Comment:</b>
 	    <%= comment.body %>
 	  </p>
-	<% end %>
 
-<% end %>
+	<% end %>
+-->
