@@ -2,9 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-document.getElementById('#image_field').onchange = ->
-  document.getElementById('#new_poster').submit()
-  return
-
-
-alert 'hello'
+$('.grid').masonry
+  itemSelector: '.grid-item'
+  columnWidth: 600

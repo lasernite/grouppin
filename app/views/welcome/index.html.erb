@@ -29,8 +29,12 @@
 		<div class="log_in"><%= render 'users/sessions/new' %></div>
 	<% end %>
 
-	<% @posters.reverse.each do |poster| %>
-		<%= image_tag poster.image_paperclip.url(:normal) %>
-	<% end %>
+	<div class="grid">
+		<% @posters.reverse.each do |poster| %>
+			<div class="grid-item">
+				<%= image_tag poster.image_paperclip.url(:normal) %>
+			</div>
+		<% end %>
+	</div>
 
 </div>
