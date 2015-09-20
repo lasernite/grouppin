@@ -76,4 +76,5 @@ html, body {
 	background-color: red;
 	margin-top: 54px;
 	background-color: rgb(208, 232, 240);
+	min-height: calc(100vh - 54px)
 }

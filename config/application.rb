@@ -26,11 +26,6 @@ module Grouppin
       e.language  = :eng
       e.blacklist = '|'
     }
-
-    ### <Amin>
-    # Initialize Parse:
-    PARSE_CLIENT = Parse.create :application_id => "cKZVxP7EUoAEeGHoDUrHrLQNQcvbk40QzJ0ofZtr",
-                          :api_key => "MgIne9yvfOcnVbN90C6L4kpGCzm6Y1ReELsBYQdS"
     
 
   end
