@@ -17,3 +17,7 @@
 
 # Ignore db environment 
 /app/bin/config/database.yml
+
+config/database.yml
+
+config/database.yml

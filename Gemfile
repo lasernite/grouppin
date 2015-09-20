@@ -26,13 +26,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# gem 'spring',        group: :development
 
 # Geolocation for local connectivity
 gem 'geocoder'
 
 # parse db
-gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
+# gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
 
 gem 'tesseract-ocr', git:'https://github.com/meh/ruby-tesseract-ocr'
 
@@ -40,6 +40,16 @@ gem 'tesseract-ocr', git:'https://github.com/meh/ruby-tesseract-ocr'
 gem 'devise'
 # facebook integration with users
 gem 'omniauth-facebook', '1.4.0'
+
+# ENV['CFLAGS'] = '-I/usr/local/Cellar/tesseract/3.02.02_3/include -I/usr/local/Cellar/leptonica/1.72/include' 
+# ENV['LDFLAGS'] = '-L/usr/local/Cellar/tesseract/3.02.02_3/lib -L/usr/local/Cellar/leptonica/1.72/lib'
+
+# paperclip image upload w/ amazon
+gem 'paperclip'
+gem 'aws-sdk'
+
+# imagemagick
+gem 'rmagick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
