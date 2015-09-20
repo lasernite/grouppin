@@ -28,7 +28,7 @@
 development:
   adapter: postgresql
   database: grouppin_development
-  username: mayuri
+  username: noor
   password:
   pool: 5
   timeout: 5000
