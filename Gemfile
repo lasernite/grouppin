@@ -35,6 +35,7 @@ gem 'geocoder'
 # gem 'parse-ruby-client', git:'https://github.com/adelevie/parse-ruby-client.git'
 
 gem 'tesseract-ocr', git:'https://github.com/meh/ruby-tesseract-ocr'
+gem 'stanford-core-nlp'
 
 # user authentication
 gem 'devise'
