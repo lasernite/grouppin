@@ -10,6 +10,11 @@
 	  		datetime = DateTime.new(year = time.year, month = time.month, day = time.day, hour = time.hour, minute = time.min)
 			@poster.update_attribute(:tesseract_text, text)
 			@poster.update_attribute(:parsed_datetime, datetime)
+			# @results = Array.new
+			# # Poster.find(:all, :order => "parsed_datetime").each do |item|
+			# #       @results << item
+			# #   end
+			# # put @results
 			redirect_to '/'
 		end
 

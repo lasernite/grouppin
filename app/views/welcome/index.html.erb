@@ -36,7 +36,15 @@
 	<% end %>
 
 	<div class="grid">
-		<% @posters.reverse.each do |poster| %>
+		<!--
+		<% @sorted.each do |poster| %>
+			<div class="grid-item" >
+				<%= image_tag poster.image_paperclip.url(:normal) %>
+			</div>
+		<% end %>
+		-->
+
+		<% @sorted.each do |poster| %>
 
 			<div class="grid-item">
 				<%= image_tag poster.image_paperclip.url(:normal) %>
