@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$('.grid').masonry
-  itemSelector: '.grid-item'
-  columnWidth: 600
+$(window).load ->
+  $('.grid').masonry
+    itemSelector: '.grid-item'
+    columnWidth: 0
+    isFitWidth: true
+  return
